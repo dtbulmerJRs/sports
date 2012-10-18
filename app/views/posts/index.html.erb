@@ -1,8 +1,8 @@
 <h1>Sports Blag</h1>
 
 <% @posts.each do |post| %>
-    <h2><%= post.title %></h2>
-    <p><%= post.body %></p>
+    <h2><%= link_to post.title, post_path(post) %></h2>
+    <p><%= raw truncate_html(post.body, 40) %></p>
     <p><%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
 <% end %>
 

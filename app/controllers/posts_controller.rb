@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  helper :all
+
   # GET /posts
   # GET /posts.json
   def index
