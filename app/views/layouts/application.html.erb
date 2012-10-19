@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sports</title>
+  <title>Sports! Blag</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <h1>Sports! A Blag</h1>
+</header>
+
+<aside>
+  <nav>
+    <% five_most_recent_posts.each do |post| %>
+      <%= link_to post.title, post_path(post) %>
+    <% end %>
+  </nav>
+</aside>
+
+<article>
+  <%= yield %>
+</article>
 
 </body>
 </html>
